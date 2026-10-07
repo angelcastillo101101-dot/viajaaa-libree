@@ -1,0 +1,2510 @@
+
+<!doctype html>
+<html lang="es">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta
+name="description"
+content="Descubre destinos, sabores, experiencias y el clima de los 38 municipios de Coahuila."
+>
+
+<meta name="theme-color" content="#f6f0df">
+
+<title>VIAJA LIBRE | Coahuila</title>
+
+<style>
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root{
+    --arena:#f6f0df; --arena-dark:#e8dfc8; --azul:#315c63; --azul-dark:#24464c; --terracota:#b96545; --terracota-dark:#954a32; --blanco:#fff; --negro:#222; --gris:#6f6f6f;
+    --radius:18px;
+    --shadow:0 15px 40px rgba(0,0,0,.10);
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--arena);
+    color:var(--negro);
+    line-height:1.6;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+select{
+    font:inherit;
+}
+
+.page-wrap{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+.skip-link{
+    position:absolute;
+    left:-9999px;
+    top:10px;
+    background:#000;
+    color:#fff;
+    padding:10px 15px;
+    z-index:9999;
+}
+
+.skip-link:focus{
+    left:10px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.site-header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(246,240,223,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+.navbar{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo span:first-child{
+    color:var(--azul);
+}
+
+.logo-period{
+    color:var(--terracota);
+}
+
+.menu{
+    display:flex;
+    list-style:none;
+    gap:28px;
+}
+
+.menu a{
+    font-size:14px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.8px;
+}
+
+.menu a:hover{
+    color:var(--terracota);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    color:#fff;
+    display:flex;
+    align-items:flex-end;
+    overflow:hidden;
+}
+
+.hero-image{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.hero-shade{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.15)
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding-bottom:80px;
+}
+
+.hero-eyebrow{
+    color:#fff;
+}
+
+.eyebrow{
+    font-size:12px;
+    letter-spacing:2px;
+    font-weight:800;
+    color:var(--terracota);
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,82px);
+    line-height:.98;
+    max-width:900px;
+    margin-bottom:35px;
+}
+
+em{
+    color:var(--terracota);
+    font-style:normal;
+}
+
+.hero-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:30px;
+}
+
+.hero-bottom p{
+    max-width:550px;
+    font-size:18px;
+}
+
+.hero-note{
+    position:absolute;
+    right:25px;
+    bottom:25px;
+    font-size:11px;
+    letter-spacing:1px;
+    z-index:3;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+    padding:15px 23px;
+    border-radius:50px;
+    border:none;
+    cursor:pointer;
+    font-weight:800;
+    transition:.25s;
+}
+
+.button:hover{
+    transform:translateY(-3px);
+}
+
+.button-light{
+    background:#fff;
+    color:var(--negro);
+}
+
+.button-dark{
+    background:var(--azul);
+    color:#fff;
+}
+
+.button-dark:hover{
+    background:var(--azul-dark);
+}
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.intro{
+    padding:110px 0;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+}
+
+.intro h2,
+.weather-intro h2,
+.section-heading h2{
+    font-size:clamp(38px,5vw,65px);
+    line-height:1;
+}
+
+.intro-copy{
+    font-size:18px;
+}
+
+.text-link{
+    display:inline-block;
+    margin-top:25px;
+    font-weight:800;
+    color:var(--terracota);
+}
+
+.intro-details{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:60px;
+}
+
+.intro-details span{
+    padding:10px 17px;
+    border:1px solid rgba(0,0,0,.15);
+    border-radius:50px;
+    font-size:13px;
+    font-weight:700;
+}
+
+
+/* =====================================================
+   SECCIONES
+===================================================== */
+
+.section-band{
+    background:var(--azul);
+    color:#fff;
+    padding:100px 0;
+}
+
+.section-heading{
+    display:flex;
+    justify-content:space-between;
+    gap:50px;
+    align-items:end;
+    margin-bottom:50px;
+}
+
+.section-heading>p{
+    max-width:350px;
+}
+
+
+/* =====================================================
+   38 MUNICIPIOS
+===================================================== */
+
+.destination-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.destination-card{
+    min-height:430px;
+    position:relative;
+    overflow:hidden;
+    border-radius:var(--radius);
+    cursor:pointer;
+    background:#222;
+}
+
+.destination-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    position:absolute;
+    inset:0;
+    transition:transform .5s;
+}
+
+.destination-card:hover img{
+    transform:scale(1.08);
+}
+
+.card-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.88),
+        rgba(0,0,0,.05) 70%
+    );
+}
+
+.card-content{
+    position:absolute;
+    bottom:22px;
+    left:22px;
+    right:22px;
+    z-index:2;
+}
+
+.category{
+    font-size:10px;
+    letter-spacing:1.5px;
+    font-weight:800;
+    color:#fff;
+    opacity:.85;
+}
+
+.card-content h3{
+    font-size:25px;
+    margin:7px 0;
+}
+
+.card-content p{
+    font-size:13px;
+    margin-bottom:14px;
+}
+
+.experience-button{
+    background:var(--terracota);
+    border:0;
+    color:#fff;
+    font-weight:800;
+    cursor:pointer;
+    padding:9px 14px;
+    border-radius:30px;
+    transition:.2s;
+}
+
+.experience-button:hover{
+    background:var(--terracota-dark);
+    transform:translateY(-2px);
+}
+
+
+/* =====================================================
+   EXPERIENCES
+===================================================== */
+
+.experiences{
+    padding:110px 0;
+}
+
+.experience-list{
+    margin-top:50px;
+    border-top:1px solid rgba(0,0,0,.15);
+}
+
+.experience-item{
+    display:grid;
+    grid-template-columns:70px 60px 1fr 30px;
+    align-items:center;
+    gap:20px;
+    padding:30px 0;
+    border-bottom:1px solid rgba(0,0,0,.15);
+}
+
+.experience-number{
+    font-weight:800;
+    color:var(--terracota);
+}
+
+.experience-mark{
+    font-size:30px;
+}
+
+.experience-item h3{
+    margin-bottom:5px;
+}
+
+.experience-arrow{
+    font-size:25px;
+    color:var(--terracota);
+}
+
+
+/* =====================================================
+   GALERÍA
+===================================================== */
+
+.gallery-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.gallery-heading h2{
+    font-size:50px;
+}
+
+.gallery-controls{
+    display:flex;
+    gap:10px;
+}
+
+.gallery-controls button{
+    width:48px;
+    height:48px;
+    border:1px solid rgba(255,255,255,.5);
+    background:transparent;
+    color:#fff;
+    border-radius:50%;
+    cursor:pointer;
+}
+
+.gallery-frame{
+    position:relative;
+}
+
+.gallery-frame img{
+    width:100%;
+    height:550px;
+    object-fit:cover;
+    border-radius:var(--radius);
+}
+
+.gallery-caption{
+    display:flex;
+    justify-content:space-between;
+    margin-top:15px;
+}
+
+
+/* =====================================================
+   WEATHER
+===================================================== */
+
+.weather{
+    padding:110px 0;
+}
+
+.weather-intro{
+    margin-bottom:45px;
+}
+
+.weather-intro>p:last-child{
+    max-width:550px;
+    margin-top:20px;
+    color:var(--gris);
+}
+
+.weather-panel{
+    background:#fff;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:var(--shadow);
+}
+
+.weather-panel label{
+    display:block;
+    font-size:12px;
+    letter-spacing:1.5px;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.weather-controls{
+    display:flex;
+    gap:12px;
+}
+
+.weather-controls select{
+    flex:1;
+    min-height:55px;
+    padding:0 18px;
+    border:1px solid #d5d0c5;
+    border-radius:12px;
+    background:var(--arena);
+    color:var(--negro);
+    outline:none;
+}
+
+.weather-controls select:focus{
+    border-color:var(--azul);
+}
+
+.weather-result{
+    margin-top:25px;
+}
+
+
+/* =====================================================
+   WEATHER CARD
+===================================================== */
+
+.clima-card{
+    background:linear-gradient(
+        135deg,
+        #315c63,
+        #24464c
+    );
+    color:#fff;
+    border-radius:22px;
+    padding:30px;
+    overflow:hidden;
+    position:relative;
+}
+
+.clima-card::after{
+    content:"☁";
+    position:absolute;
+    right:30px;
+    top:10px;
+    font-size:130px;
+    opacity:.08;
+}
+
+.clima-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative;
+    z-index:2;
+}
+
+.clima-municipio{
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    opacity:.75;
+}
+
+.clima-header h3{
+    font-size:28px;
+    margin-top:5px;
+}
+
+.clima-temperatura{
+    font-size:clamp(50px,7vw,80px);
+    font-weight:800;
+    line-height:1;
+}
+
+.clima-datos{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+    position:relative;
+    z-index:2;
+}
+
+.clima-datos>div{
+    background:rgba(255,255,255,.10);
+    border:1px solid rgba(255,255,255,.12);
+    padding:18px 12px;
+    border-radius:15px;
+    text-align:center;
+}
+
+.clima-datos span{
+    display:block;
+    font-size:24px;
+    margin-bottom:7px;
+}
+
+.clima-datos strong{
+    display:block;
+    font-size:19px;
+}
+
+.clima-datos small{
+    display:block;
+    margin-top:4px;
+    opacity:.7;
+    font-size:11px;
+}
+
+.clima-actualizado{
+    margin-top:25px;
+    font-size:12px;
+    opacity:.65;
+    position:relative;
+    z-index:2;
+}
+
+.clima-cargando{
+    padding:25px;
+    background:var(--arena);
+    border-radius:15px;
+    color:var(--negro);
+}
+
+.clima-error{
+    padding:25px;
+    background:#f5dddd;
+    color:#7b2727;
+    border-radius:15px;
+}
+
+
+/* =====================================================
+   MODAL MUNICIPIO
+===================================================== */
+
+dialog{
+    border:none;
+    border-radius:24px;
+    padding:0;
+    max-width:650px;
+    width:92%;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.35);
+}
+
+dialog::backdrop{
+    background:rgba(0,0,0,.65);
+    backdrop-filter:blur(4px);
+}
+
+.modal-image{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.modal-body{
+    padding:30px;
+    background:#fff;
+}
+
+.modal-categoria{
+    color:var(--terracota);
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.modal-body h2{
+    font-size:38px;
+    line-height:1.1;
+    margin:8px 0 15px;
+}
+
+.modal-body p{
+    color:#555;
+    margin-bottom:18px;
+}
+
+.modal-datos{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin:20px 0;
+}
+
+.modal-dato{
+    background:var(--arena);
+    padding:15px;
+    border-radius:12px;
+}
+
+.modal-dato strong{
+    display:block;
+    color:var(--azul);
+    font-size:12px;
+    text-transform:uppercase;
+}
+
+.modal-close{
+    border:0;
+    background:var(--terracota);
+    color:#fff;
+    padding:12px 20px;
+    border-radius:30px;
+    font-weight:800;
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.site-footer{
+    background:#1f292b;
+    color:#fff;
+    padding:70px 0;
+}
+
+.footer-content{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-logo{
+    font-size:25px;
+    font-weight:900;
+}
+
+.footer-logo span{
+    color:var(--terracota);
+}
+
+.footer-content p{
+    color:rgba(255,255,255,.65);
+}
+
+.footer-links{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.footer-links a:hover{
+    color:var(--terracota);
+}
+
+.footer-end{
+    text-align:right;
+    color:rgba(255,255,255,.5);
+    font-size:12px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+    .destination-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .clima-datos{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+@media(max-width:750px){
+
+    .destination-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .intro-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .section-heading{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .footer-content{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .navbar{
+        min-height:65px;
+    }
+
+    .menu{
+        display:none;
+    }
+
+    .hero{
+        min-height:85vh;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .destination-grid{
+        grid-template-columns:1fr;
+    }
+
+    .destination-card{
+        min-height:400px;
+    }
+
+    .experience-item{
+        grid-template-columns:35px 40px 1fr;
+    }
+
+    .experience-arrow{
+        display:none;
+    }
+
+    .gallery-heading{
+        align-items:flex-start;
+        gap:20px;
+        flex-direction:column;
+    }
+
+    .gallery-heading h2{
+        font-size:40px;
+    }
+
+    .gallery-frame img{
+        height:350px;
+    }
+
+    .weather-panel{
+        padding:20px;
+    }
+
+    .weather-controls{
+        flex-direction:column;
+    }
+
+    .clima-header{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .clima-datos{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .modal-body h2{
+        font-size:30px;
+    }
+
+}
+
+
+/* =====================================================
+   BUSCADOR
+===================================================== */
+
+.municipios-tools{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.municipios-count{
+    font-size:13px;
+    opacity:.75;
+}
+
+#buscadorMunicipio{
+    width:320px;
+    max-width:100%;
+    padding:14px 18px;
+    border-radius:30px;
+    border:none;
+    outline:none;
+}
+
+@media(max-width:600px){
+
+    .municipios-tools{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    #buscadorMunicipio{
+        width:100%;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<a class="skip-link" href="#contenido">
+Saltar al contenido
+</a>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+<nav class="navbar page-wrap" aria-label="Navegación principal">
+
+<a class="logo" href="#inicio">
+<span>VIAJA</span> LIBRE<span class="logo-period">.</span>
+</a>
+
+<ul class="menu">
+
+<li><a href="#inicio">Inicio</a></li>
+<li><a href="#lugares">Lugares</a></li>
+<li><a href="#recomendaciones">Recomendaciones</a></li>
+<li><a href="#galeria">Galería</a></li>
+<li><a href="#clima">Clima</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<main id="contenido">
+
+
+<!-- =====================================================
+     INICIO
+===================================================== -->
+
+<section id="inicio" class="hero">
+
+<img
+class="hero-image"
+src="https://rexnews.mx/wp-content/uploads/2024/10/Portada-Coahuila.jpg"
+alt="Paisaje de Coahuila"
+>
+
+<div class="hero-shade"></div>
+
+<div class="hero-content page-wrap">
+
+<p class="eyebrow hero-eyebrow">
+Sorprendete con coahuila
+</p>
+
+<h1>
+Vive las mejores experiencias,
+<br>
+tenemos una aventura para ti.
+<em></em>
+</h1>
+
+<div class="hero-bottom">
+
+<p>
+Conoce lugares increíbles, descubre nuevos sabores
+y vive experiencias únicas en los 38 municipios
+del estado de Coahuila.
+</p>
+
+<a href="#lugares" class="button button-light">
+Explorar destinos ↓
+</a>
+
+</div>
+
+</div>
+
+<span class="hero-note">
+COAHUILA, MÉXICO / VIAJA A TU MANERA
+</span>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro page-wrap">
+
+<p class="eyebrow">
+VIAJA LIBRE
+</p>
+
+<div class="intro-grid">
+
+<h2>
+Tu próxima aventura
+<br>
+<em>comienza aquí.</em>
+</h2>
+
+<div class="intro-copy">
+
+<p>
+Coahuila es un estado lleno de paisajes,
+pueblos mágicos, gastronomía, cultura y naturaleza.
+Aquí encontrarás información de sus 38 municipios
+para elegir tu próxima visita.
+</p>
+
+<a class="text-link" href="#recomendaciones">
+Ideas para tu viaje ↗
+</a>
+
+</div>
+
+</div>
+
+<div class="intro-details">
+
+<span>38 municipios</span>
+<span>4 pueblos mágicos</span>
+<span>Un norte por descubrir</span>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     LOS 38 MUNICIPIOS
+===================================================== -->
+
+<section id="lugares" class="destinations section-band">
+
+<div class="page-wrap">
+
+<div class="section-heading">
+
+<div>
+
+<p class="eyebrow">
+LOS 38 MUNICIPIOS
+</p>
+
+<h2>
+Conoce todo
+<br>
+<em>Coahuila.</em>
+</h2>
+
+</div>
+
+<p>
+Selecciona cualquier municipio para conocer
+su información, atractivos y características.
+</p>
+
+</div>
+
+
+<div class="municipios-tools">
+
+<span class="municipios-count">
+38 municipios disponibles
+</span>
+
+<input
+type="search"
+id="buscadorMunicipio"
+placeholder="🔎 Buscar municipio..."
+aria-label="Buscar municipio"
+>
+
+</div>
+
+
+<div
+id="municipiosGrid"
+class="destination-grid"
+>
+
+<!-- JAVASCRIPT GENERARÁ LOS 38 -->
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     RECOMENDACIONES
+===================================================== -->
+
+<section id="recomendaciones" class="experiences page-wrap">
+
+<div class="section-heading">
+
+<div>
+
+<p class="eyebrow">
+EL VIAJE TAMBIÉN ES ESTO
+</p>
+
+<h2>
+Hazle espacio
+<br>
+<em>a lo inesperado.</em>
+</h2>
+
+</div>
+
+<p>
+Descubre la gastronomía, cultura y naturaleza
+que hacen especial a Coahuila.
+</p>
+
+</div>
+
+
+<div class="experience-list">
+
+<article class="experience-item">
+
+<span class="experience-number">01</span>
+
+<div class="experience-mark">🌮</div>
+
+<div>
+<h3>GASTRONOMÍA</h3>
+
+<p>
+Carnes, dulces de leche y productos regionales.
+Pregunta qué se cocina hoy.
+</p>
+</div>
+
+<span class="experience-arrow">↗</span>
+
+</article>
+
+
+<article class="experience-item">
+
+<span class="experience-number">02</span>
+
+<div class="experience-mark">⛪</div>
+
+<div>
+<h3>CULTURA</h3>
+
+<p>
+Recorre museos, arquitectura y pueblos
+que conservan la memoria del estado.
+</p>
+</div>
+
+<span class="experience-arrow">↗</span>
+
+</article>
+
+
+<article class="experience-item">
+
+<span class="experience-number">03</span>
+
+<div class="experience-mark">🏔️</div>
+
+<div>
+<h3>NATURALEZA</h3>
+
+<p>
+Montañas, desierto, pueblos mágicos,
+bosque y pozas.
+</p>
+</div>
+
+<span class="experience-arrow">↗</span>
+
+</article>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     GALERÍA
+===================================================== -->
+
+<section id="galeria" class="gallery section-band">
+
+<div class="page-wrap">
+
+<div class="gallery-heading">
+
+<div>
+
+<p class="eyebrow">
+UN VISTAZO AL CAMINO
+</p>
+
+<h2>
+Coahuila en pausa.
+</h2>
+
+</div>
+
+<div class="gallery-controls">
+
+<button
+id="imagenAnterior"
+type="button"
+aria-label="Fotografía anterior"
+>
+←
+</button>
+
+<button
+id="imagenSiguiente"
+type="button"
+aria-label="Fotografía siguiente"
+>
+→
+</button>
+
+</div>
+
+</div>
+
+
+<figure class="gallery-frame">
+
+<img
+id="imagenGaleria"
+src="https://tse3.mm.bing.net/th/id/OIP.ONdh-9BQpfMrBGbV5JFhyAHaEq?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+alt="Paisaje de Coahuila"
+>
+
+<figcaption class="gallery-caption">
+
+<p id="galeriaDescripcion">
+El desierto al final de la tarde
+</p>
+
+<span id="galeriaContador">
+01 / 05
+</span>
+
+</figcaption>
+
+</figure>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CLIMA
+===================================================== -->
+
+<section id="clima" class="weather page-wrap">
+
+<div class="weather-intro">
+
+<p class="eyebrow">
+ANTES DE SALIR
+</p>
+
+<h2>
+Mira el cielo
+<br>
+<em>de tu destino.</em>
+</h2>
+
+<p>
+Consulta el clima actual de cualquiera de los
+38 municipios de Coahuila y prepara tu próxima parada.
+</p>
+
+</div>
+
+
+<div class="weather-panel">
+
+<label for="ciudad">
+ELIGE TU MUNICIPIO
+</label>
+
+<div class="weather-controls">
+
+<select id="ciudad" name="ciudad">
+
+<option value="abasolo">Abasolo</option>
+<option value="acuna">Acuña</option>
+<option value="allende">Allende</option>
+<option value="arteaga">Arteaga</option>
+<option value="candela">Candela</option>
+<option value="castanos">Castaños</option>
+<option value="cuatrocienegas">Cuatro Ciénegas</option>
+<option value="escobedo">Escobedo</option>
+<option value="franciscoimadero">Francisco I. Madero</option>
+<option value="frontera">Frontera</option>
+<option value="generalcepeda">General Cepeda</option>
+<option value="guerrero">Guerrero</option>
+<option value="hidalgo">Hidalgo</option>
+<option value="jimenez">Jiménez</option>
+<option value="juarez">Juárez</option>
+<option value="lamadrid">Lamadrid</option>
+<option value="matamoros">Matamoros</option>
+<option value="monclova">Monclova</option>
+<option value="morelos">Morelos</option>
+<option value="muzquiz">Múzquiz</option>
+<option value="nadadores">Nadadores</option>
+<option value="nava">Nava</option>
+<option value="ocampo">Ocampo</option>
+<option value="parras">Parras de la Fuente</option>
+<option value="piedrasnegras">Piedras Negras</option>
+<option value="progreso">Progreso</option>
+<option value="ramosarizpe">Ramos Arizpe</option>
+<option value="sabinas">Sabinas</option>
+<option value="sacramento">Sacramento</option>
+<option value="saltillo" selected>Saltillo</option>
+<option value="sanbuenaventura">San Buenaventura</option>
+<option value="sanjuandesabinas">San Juan de Sabinas</option>
+<option value="sanpedro">San Pedro</option>
+<option value="sierramojada">Sierra Mojada</option>
+<option value="torreon">Torreón</option>
+<option value="viesca">Viesca</option>
+<option value="villaunion">Villa Unión</option>
+<option value="zaragoza">Zaragoza</option>
+
+</select>
+
+<button
+id="consultarClima"
+class="button button-dark"
+type="button"
+>
+Consultar ↗
+</button>
+
+</div>
+
+
+<div
+id="resultadoClima"
+class="weather-result"
+aria-live="polite"
+aria-atomic="true"
+>
+
+<p>
+Selecciona un municipio para consultar el tiempo.
+</p>
+
+</div>
+
+
+<p style="margin-top:15px;font-size:12px;color:#777;">
+
+Datos meteorológicos proporcionados por
+
+<a
+href="https://open-meteo.com/"
+target="_blank"
+rel="noreferrer"
+>
+Open-Meteo
+</a>.
+
+</p>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<dialog id="modalMunicipio">
+
+<img
+id="modalImagen"
+class="modal-image"
+src=""
+alt=""
+>
+
+<div class="modal-body">
+
+<span
+id="modalCategoria"
+class="modal-categoria"
+>
+MUNICIPIO DE COAHUILA
+</span>
+
+<h2 id="modalTitulo">
+Municipio
+</h2>
+
+<p id="modalTexto">
+Información del municipio.
+</p>
+
+
+<div class="modal-datos">
+
+<div class="modal-dato">
+
+<strong>Región</strong>
+
+<span id="modalRegion">
+-
+</span>
+
+</div>
+
+
+<div class="modal-dato">
+
+<strong>Atractivo</strong>
+
+<span id="modalAtractivo">
+-
+</span>
+
+</div>
+
+</div>
+
+
+<button
+id="cerrarModal"
+class="modal-close"
+type="button"
+>
+Cerrar
+</button>
+
+</div>
+
+</dialog>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="site-footer">
+
+<div class="footer-content page-wrap">
+
+<div>
+
+<a class="footer-logo" href="#inicio">
+VIAJA LIBRE<span>.</span>
+</a>
+
+<p>
+Coahuila: una aventura
+<br>
+para cada viajero.
+</p>
+
+</div>
+
+
+<div class="footer-links">
+
+<p class="eyebrow">
+FUENTES Y MÁS INFORMACIÓN
+</p>
+
+<a
+href="https://coahuilaturismo.com/"
+target="_blank"
+rel="noreferrer"
+>
+Turismo de Coahuila
+</a>
+
+<a
+href="https://open-meteo.com/"
+target="_blank"
+rel="noreferrer"
+>
+Datos del clima
+</a>
+
+</div>
+
+
+<span class="footer-end">
+
+COAHUILA, MÉXICO
+<br>
+38 MUNICIPIOS
+
+</span>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   DATOS DE LOS 38 MUNICIPIOS
+===================================================== */
+
+const municipios = {
+
+abasolo:{
+nombre:"Abasolo",
+region:"Centro",
+atractivo:"Paisajes rurales y tradición norteña",
+texto:"Municipio de la egión Centro de Coahuila, con una identidad ligada a las comunidades rurales y a las tradiciones del estado.",
+imagen:"https://visitmexico.com/media/usercontent/687167d352c63-111_gmxdot_jpg"
+},
+
+acuna:{
+nombre:"Acuña",
+region:"Norte",
+atractivo:"Presa La Amistad",
+texto:"Ciudad fronteriza ubicada frente a Del Rio, Texas. Destaca por la Presa La Amistad y sus actividades recreativas.",
+imagen:"https://cdn.britannica.com/66/127866-050-91FB0663/Saltillo-Coahuila-Mexico.jpg"
+},
+
+allende:{
+nombre:"Allende",
+region:"Norte",
+atractivo:"Plaza principal y arquitectura",
+texto:"Municipio del norte de Coahuila reconocido por sus espacios públicos, gastronomía y ambiente tradicional.",
+imagen:"https://upload.wikimedia.org/wikipedia/commons/d/dd/Allende_Coahuila_P5150427.jpg"
+},
+
+arteaga:{
+nombre:"Arteaga",
+region:"Sureste",
+atractivo:"Bosques y Sierra de Arteaga",
+texto:"Pueblo Mágico rodeado de montañas y bosques. Es uno de los destinos favoritos para disfrutar de naturaleza y clima fresco.",
+imagen:"https://escapadas.mexicodesconocido.com.mx/wp-content/uploads/2020/10/ARTEAGA.jpg"
+},
+
+candela:{
+nombre:"Candela",
+region:"Centro",
+atractivo:"Río y aguas termales",
+texto:"Pueblo Mágico con paisajes serranos, ríos y espacios naturales ideales para actividades al aire libre.",
+imagen:"https://cdn.shopify.com/s/files/1/2492/3552/files/candela_480x480.jpg?v=1588202044"
+},
+
+castanos:{
+nombre:"Castaños",
+region:"Centro",
+atractivo:"Paisajes del desierto",
+texto:"Municipio cercano a Monclova que forma parte de la región Centro de Coahuila.",
+imagen:"https://cdn.shopify.com/s/files/1/2492/3552/files/castanos.jpg?v=1588202455"
+},
+
+cuatrocienegas:{
+nombre:"Cuatro Ciénegas",
+region:"Desierto",
+atractivo:"Pozas y dunas",
+texto:"Pueblo Mágico famoso por sus pozas de aguas cristalinas, dunas de yeso y biodiversidad única.",
+imagen:"https://mexicorutamagica.mx/wp-content/uploads/2020/11/cuatro-cienegas.jpg"
+},
+
+escobedo:{
+nombre:"Escobedo",
+region:"Centro",
+atractivo:"Paisajes desérticos",
+texto:"Municipio de la región Centro con paisajes característicos del desierto coahuilense.",
+imagen:"https://tse3.mm.bing.net/th/id/OIP.g582p9pzmEEUP0P7KH65zQHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+},
+
+franciscoimadero:{
+nombre:"Francisco I. Madero",
+region:"Laguna",
+atractivo:"Tradición agrícola",
+texto:"Municipio de la Comarca Lagunera con una importante tradición agrícola y comunidades con identidad propia.",
+imagen:"https://tse2.mm.bing.net/th/id/OIP.uzUzHL9lnS9eZvN-sVnZdgAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+},
+
+frontera:{
+nombre:"Frontera",
+region:"Centro",
+atractivo:"Historia ferroviaria",
+texto:"Ciudad de la región Centro estrechamente relacionada con la actividad industrial y ferroviaria de Coahuila.",
+imagen:"https://th.bing.com/th/id/OIP.PFQDqa3cKZDFlAs6JdD5ygHaE5?w=245&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3"
+},
+
+generalcepeda:{
+nombre:"General Cepeda",
+region:"Sureste",
+atractivo:"Museo del Desierto",
+texto:"Municipio cercano a Saltillo con riqueza paleontológica, historia y paisajes desérticos.",
+imagen:"https://visitmexico.com/media/usercontent/680ae85a137fd-MSD_2070-copia_gmxdot_jpg"
+},
+
+guerrero:{
+nombre:"Guerrero",
+region:"Norte",
+atractivo:"Misión de San Bernardo",
+texto:"Municipio del norte de Coahuila con patrimonio histórico y paisajes naturales.",
+imagen:"https://tse2.mm.bing.net/th/id/OIP.EYK217am88hfttdWhV41ZAHaDt?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+},
+
+hidalgo:{
+nombre:"Hidalgo",
+region:"Norte",
+atractivo:"Paisajes fronterizos",
+texto:"Municipio del norte del estado caracterizado por sus comunidades y paisajes desérticos.",
+imagen:"https://descubreenmexico.com/wp-content/uploads/2022/04/hidalgo.jpg"
+},
+
+jimenez:{
+nombre:"Jiménez",
+region:"Norte",
+atractivo:"Paisajes del norte",
+texto:"Municipio fronterizo de Coahuila rodeado por paisajes característicos de la región norte.",
+imagen:"https://historiasmx.com/wp-content/uploads/2025/07/371534490_168962082896661_273761579164692017_n-2-1536x864.jpg"
+},
+
+juarez:{
+nombre:"Juárez",
+region:"Norte",
+atractivo:"Paisajes naturales",
+texto:"Municipio ubicado en la región norte de Coahuila, con paisajes desérticos y comunidades tradicionales.",
+imagen:"https://i.ytimg.com/vi/RvPCFS5Y4dc/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGEQgWyhlMA8=&rs=AOn4CLAPSXrRvuaEKaYp0J7qgqo0_CHG7Q"
+},
+
+lamadrid:{
+nombre:"Lamadrid",
+region:"Centro",
+atractivo:"Paisajes rurales",
+texto:"Pequeño municipio de la región Centro con una identidad ligada a las comunidades rurales de Coahuila.",
+imagen:"https://blob.posta.com.mx/images/2025/05/21/11794882548526341580958134550240069921328484n-24679242-focus-0-0-1200-600.webp"
+},
+
+matamoros:{
+nombre:"Matamoros",
+region:"Laguna",
+atractivo:"Comarca Lagunera",
+texto:"Municipio de la región Laguna con actividad agrícola, comercial y una importante identidad lagunera.",
+imagen:"https://tse1.mm.bing.net/th/id/OIP.l_9lQXl1s51-ktk7cDQ77gHaF7?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+},
+
+monclova:{
+nombre:"Monclova",
+region:"Centro",
+atractivo:"Museo Coahuila y Texas",
+texto:"Una de las principales ciudades de Coahuila. Destaca por su historia industrial, museos y espacios culturales.",
+imagen:"https://odmblog.com.mx/wp-content/uploads/2024/09/que_hacer_visitar_en_monclova.jpg"
+},
+
+morelos:{
+nombre:"Morelos",
+region:"Norte",
+atractivo:"Centro histórico",
+texto:"Municipio del norte de Coahuila con arquitectura tradicional y espacios que conservan la historia local.",
+imagen:"https://a.travel-assets.com/findyours-php/viewfinder/images/res70/228000/228073-Morelos-Province.jpg"
+},
+
+muzquiz:{
+nombre:"Múzquiz",
+region:"Carbonífera",
+atractivo:"Pueblo Mágico",
+texto:"Pueblo Mágico conocido por su riqueza cultural, historia minera, naturaleza y tradiciones.",
+imagen:"https://www.gob.mx/cms/uploads/image/file/536223/Melchor-Mu_zquiz-Coahuila-CELEBRACION-web.jpg"
+},
+
+nadadores:{
+nombre:"Nadadores",
+region:"Centro",
+atractivo:"Tradición regional",
+texto:"Municipio de la región Centro de Coahuila con paisajes desérticos y tradiciones locales.",
+imagen:"https://cloudflare1.360gigapixels.com/pano/alejandro-ahumada/01086644_Iglesia_Lamadrid.jpg/equirect_crop_3_1/6.jpg"
+},
+
+nava:{
+nombre:"Nava",
+region:"Norte",
+atractivo:"Río Bravo y frontera",
+texto:"Municipio del norte de Coahuila cercano a Piedras Negras y a importantes zonas naturales.",
+imagen:"https://i.ytimg.com/vi/-1MxkY9-jq4/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AHUBoAC4AOKAgwIABABGHIgXig8MA8=&rs=AOn4CLBeksQSo0Rfbc686ZgiB6vwi6zbfw"
+},
+
+ocampo:{
+nombre:"Ocampo",
+region:"Desierto",
+atractivo:"Sierra y desierto",
+texto:"Uno de los municipios con mayor extensión territorial del estado, con grandes paisajes desérticos.",
+imagen:"https://sonoralifemagazine.com/wp-content/uploads/2022/10/IMG_20221005_153002.jpg"
+},
+
+parras:{
+nombre:"Parras de la Fuente",
+region:"Sureste",
+atractivo:"Viñedos",
+texto:"Pueblo Mágico famoso por sus viñedos, tradición vitivinícola, arquitectura y calles históricas.",
+imagen:"https://i.pinimg.com/736x/bd/c9/ac/bdc9ac372eb081f9463e972d598cbb52.jpg"
+},
+
+piedrasnegras:{
+nombre:"Piedras Negras",
+region:"Norte",
+atractivo:"Río Bravo",
+texto:"Ciudad fronteriza con gran actividad comercial y gastronómica. Se encuentra junto al Río Bravo.",
+imagen:"https://chij3.s3.amazonaws.com/destinos/m.268.jpeg"
+},
+
+progreso:{
+nombre:"Progreso",
+region:"Carbonífera",
+atractivo:"Región Carbonífera",
+texto:"Municipio de la región Carbonífera con historia relacionada con las actividades mineras.",
+imagen:"https://www.cruisehive.com/wp-content/uploads/2021/11/progreso13-1068x580.jpg"
+},
+
+ramosarizpe:{
+nombre:"Ramos Arizpe",
+region:"Sureste",
+atractivo:"Industria y naturaleza",
+texto:"Municipio industrial ubicado al norte de Saltillo y puerta de entrada a la región Sureste.",
+imagen:"https://vanguardia.com.mx/binrepository/1067x711/0c0/0d0/down-right/11604/CXOQ/whatsapp-image-2025-05-11-at-11-17_1-11893263_20250511215707.jpg"
+},
+
+sabinas:{
+nombre:"Sabinas",
+region:"Carbonífera",
+atractivo:"Río Sabinas",
+texto:"Una de las ciudades principales de la región Carbonífera, conocida por su río, gastronomía y tradiciones.",
+imagen:"https://th.bing.com/th/id/R.3d993ee158425d56c5b0eb508fd7477d?rik=OpsgyVlayXbGAA&pid=ImgRaw&r=0"
+},
+
+sacramento:{
+nombre:"Sacramento",
+region:"Centro",
+atractivo:"Paisajes rurales",
+texto:"Municipio pequeño de la región Centro con paisajes desérticos y comunidades tradicionales.",
+imagen:"https://tse3.mm.bing.net/th/id/OIP.bceoaZAUwMdGisoxrieM5AHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+},
+
+saltillo:{
+nombre:"Saltillo",
+region:"Sureste",
+atractivo:"Museos y sarape",
+texto:"Capital de Coahuila. Destaca por sus museos, arquitectura, gastronomía, historia y tradición del sarape.",
+imagen:"https://viajerosocultos.com/wp-content/uploads/2023/04/comer-en-saltillo.jpg"
+},
+
+sanbuenaventura:{
+nombre:"San Buenaventura",
+region:"Centro",
+atractivo:"Centro histórico",
+texto:"Municipio de la región Centro con arquitectura tradicional, fiestas y gastronomía regional.",
+imagen:"https://vanguardia.com.mx/binrepository/1152x648/0c0/0d0/down-right/11604/NCOB/452528661-1002932391794672-665594866_1-12053948_20250528205335.png"
+},
+
+sanjuandesabinas:{
+nombre:"San Juan de Sabinas",
+region:"Carbonífera",
+atractivo:"Nueva Rosita",
+texto:"Municipio de la región Carbonífera cuya principal ciudad es Nueva Rosita.",
+imagen:"https://tse2.mm.bing.net/th/id/OIP.wobjGqKmgJhyrXd-SWsj1AHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+},
+
+sanpedro:{
+nombre:"San Pedro",
+region:"Laguna",
+atractivo:"Tradición lagunera",
+texto:"Municipio de la Comarca Lagunera con importante actividad agrícola y comercial.",
+imagen:"https://www.playasmexico.com.mx/wp-content/uploads/2024/09/003_SAN_PEDRO_DE_LAS_COLONIAS_CELEBRA_102_ANOS_DE_SER_CIUDAD_uploaded_v1_2-1.png"
+},
+
+sierramojada:{
+nombre:"Sierra Mojada",
+region:"Desierto",
+atractivo:"Minería y desierto",
+texto:"Municipio de grandes extensiones desérticas y una historia relacionada con la actividad minera.",
+imagen:"https://www.mexicoenfotos.com/MX12182461745360.jpg"
+},
+
+torreon:{
+nombre:"Torreón",
+region:"Laguna",
+atractivo:"Cristo de las Noas",
+texto:"Una de las ciudades más importantes del norte de México. Destaca por su cultura, gastronomía y actividad económica.",
+imagen:"https://assets.debate.com.mx/__export/1779093068104/sites/debate/img/2026/05/18/20260518_013107807_img.jpg_1800405350.jpg"
+},
+
+viesca:{
+nombre:"Viesca",
+region:"Laguna",
+atractivo:"Dunas de Bilbao",
+texto:"Pueblo Mágico conocido por sus dunas, paisajes desérticos, historia y gastronomía.",
+imagen:"https://tse1.mm.bing.net/th/id/OIP.g6vYoSkO20oaUD81uQnWVAHaEJ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+},
+
+villaunion:{
+nombre:"Villa Unión",
+region:"Norte",
+atractivo:"Centro histórico",
+texto:"Municipio del norte de Coahuila con tradiciones, arquitectura y paisajes característicos.",
+imagen:"https://tse1.mm.bing.net/th/id/OIP.wH8v_jvNuDA8_C5-b6gNUAHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+},
+
+zaragoza:{
+nombre:"Zaragoza",
+region:"Norte",
+atractivo:"Paisajes y tradiciones",
+texto:"Municipio del norte del estado con tradiciones regionales y paisajes del desierto coahuilense.",
+imagen:"https://th.bing.com/th/id/R.8ed7cda9660f58434a6e3605f208a126?rik=byovNVfNTCRl6w&pid=ImgRaw&r=0"
+}
+
+};
+
+
+/* =====================================================
+   GENERAR LAS 38 TARJETAS
+===================================================== */
+
+const municipiosGrid =
+document.getElementById("municipiosGrid");
+
+
+function mostrarMunicipios(lista){
+
+municipiosGrid.innerHTML="";
+
+const entradas=Object.entries(lista);
+
+if(entradas.length===0){
+
+municipiosGrid.innerHTML=`
+<div style="
+grid-column:1/-1;
+background:#fff;
+color:#222;
+padding:30px;
+border-radius:18px;
+text-align:center;
+">
+<h3>No encontramos ese municipio.</h3>
+<p>Intenta con otro nombre.</p>
+</div>
+`;
+
+return;
+
+}
+
+
+entradas.forEach(([id,m])=>{
+
+const tarjeta=document.createElement("article");
+
+tarjeta.className="destination-card";
+
+tarjeta.innerHTML=`
+
+<img
+src="${m.imagen}"
+alt="Fotografía de ${m.nombre}"
+loading="lazy"
+>
+
+<div class="card-overlay"></div>
+
+<div class="card-content">
+
+<span class="category">
+${String(entradas.indexOf([id,m])+1).padStart(2,"0")} / ${m.region.toUpperCase()}
+</span>
+
+<h3>
+${m.nombre}
+</h3>
+
+<p>
+${m.atractivo}
+</p>
+
+<button
+class="experience-button"
+type="button"
+data-municipio="${id}"
+>
+Ver información ↗
+</button>
+
+</div>
+`;
+
+municipiosGrid.appendChild(tarjeta);
+
+});
+
+}
+
+
+/* =====================================================
+   BUSCADOR
+===================================================== */
+
+const buscador =
+document.getElementById("buscadorMunicipio");
+
+buscador.addEventListener("input",function(){
+
+const texto=this.value
+.toLowerCase()
+.normalize("NFD")
+.replace(/[\u0300-\u036f]/g,"");
+
+const filtrados={};
+
+Object.entries(municipios).forEach(([id,m])=>{
+
+const nombre=m.nombre
+.toLowerCase()
+.normalize("NFD")
+.replace(/[\u0300-\u036f]/g,"");
+
+if(nombre.includes(texto)){
+filtrados[id]=m;
+}
+
+});
+
+mostrarMunicipios(filtrados);
+
+});
+
+
+/* =====================================================
+   MODAL DE INFORMACIÓN
+===================================================== */
+
+const modal=
+document.getElementById("modalMunicipio");
+
+const modalImagen=
+document.getElementById("modalImagen");
+
+const modalTitulo=
+document.getElementById("modalTitulo");
+
+const modalTexto=
+document.getElementById("modalTexto");
+
+const modalRegion=
+document.getElementById("modalRegion");
+
+const modalAtractivo=
+document.getElementById("modalAtractivo");
+
+
+function abrirMunicipio(id){
+
+const municipio=municipios[id];
+
+if(!municipio)return;
+
+modalImagen.src=municipio.imagen;
+
+modalImagen.alt=
+`Fotografía de ${municipio.nombre}`;
+
+modalTitulo.textContent=
+municipio.nombre;
+
+modalTexto.textContent=
+municipio.texto;
+
+modalRegion.textContent=
+municipio.region;
+
+modalAtractivo.textContent=
+municipio.atractivo;
+
+modal.showModal();
+
+}
+
+
+municipiosGrid.addEventListener("click",function(e){
+
+const boton=
+e.target.closest(".experience-button");
+
+if(!boton)return;
+
+abrirMunicipio(
+boton.dataset.municipio
+);
+
+});
+
+
+document
+.getElementById("cerrarModal")
+.addEventListener("click",function(){
+
+modal.close();
+
+});
+
+
+modal.addEventListener("click",function(e){
+
+if(e.target===modal){
+modal.close();
+}
+
+});
+
+
+/* =====================================================
+   CLIMA — 38 MUNICIPIOS
+===================================================== */
+
+const climaMunicipios={
+
+abasolo:{nombre:"Abasolo",lat:27.18,lon:-101.42},
+acuna:{nombre:"Acuña",lat:29.32,lon:-100.95},
+allende:{nombre:"Allende",lat:28.34,lon:-100.85},
+arteaga:{nombre:"Arteaga",lat:25.44,lon:-100.85},
+candela:{nombre:"Candela",lat:26.84,lon:-100.66},
+castanos:{nombre:"Castaños",lat:26.78,lon:-101.42},
+cuatrocienegas:{nombre:"Cuatro Ciénegas",lat:26.99,lon:-102.06},
+escobedo:{nombre:"Escobedo",lat:27.23,lon:-101.42},
+franciscoimadero:{nombre:"Francisco I. Madero",lat:25.77,lon:-103.27},
+frontera:{nombre:"Frontera",lat:26.93,lon:-101.45},
+generalcepeda:{nombre:"General Cepeda",lat:25.38,lon:-101.47},
+guerrero:{nombre:"Guerrero",lat:28.31,lon:-100.38},
+hidalgo:{nombre:"Hidalgo",lat:28.24,lon:-100.57},
+jimenez:{nombre:"Jiménez",lat:29.07,lon:-100.68},
+juarez:{nombre:"Juárez",lat:27.60,lon:-100.72},
+lamadrid:{nombre:"Lamadrid",lat:27.04,lon:-101.79},
+matamoros:{nombre:"Matamoros",lat:25.53,lon:-103.23},
+monclova:{nombre:"Monclova",lat:26.91,lon:-101.42},
+morelos:{nombre:"Morelos",lat:28.41,lon:-100.88},
+muzquiz:{nombre:"Múzquiz",lat:27.88,lon:-101.52},
+nadadores:{nombre:"Nadadores",lat:27.05,lon:-101.59},
+nava:{nombre:"Nava",lat:28.42,lon:-100.77},
+ocampo:{nombre:"Ocampo",lat:27.31,lon:-102.40},
+parras:{nombre:"Parras de la Fuente",lat:25.44,lon:-102.18},
+piedrasnegras:{nombre:"Piedras Negras",lat:28.70,lon:-100.52},
+progreso:{nombre:"Progreso",lat:27.43,lon:-100.98},
+ramosarizpe:{nombre:"Ramos Arizpe",lat:25.54,lon:-100.95},
+sabinas:{nombre:"Sabinas",lat:27.85,lon:-101.12},
+sacramento:{nombre:"Sacramento",lat:27.00,lon:-101.72},
+saltillo:{nombre:"Saltillo",lat:25.4232,lon:-100.9925},
+sanbuenaventura:{nombre:"San Buenaventura",lat:27.06,lon:-101.54},
+sanjuandesabinas:{nombre:"San Juan de Sabinas",lat:27.93,lon:-101.30},
+sanpedro:{nombre:"San Pedro",lat:25.76,lon:-102.98},
+sierramojada:{nombre:"Sierra Mojada",lat:27.29,lon:-103.70},
+torreon:{nombre:"Torreón",lat:25.54,lon:-103.45},
+viesca:{nombre:"Viesca",lat:25.34,lon:-102.81},
+villaunion:{nombre:"Villa Unión",lat:28.22,lon:-100.73},
+zaragoza:{nombre:"Zaragoza",lat:28.49,lon:-100.92}
+
+};
+
+
+/* =====================================================
+   DESCRIPCIÓN DEL CLIMA
+===================================================== */
+
+function obtenerDescripcionClima(codigo){
+
+const condiciones={
+
+0:["Cielo despejado","☀️"],
+1:["Principalmente despejado","🌤️"],
+2:["Parcialmente nublado","⛅"],
+3:["Nublado","☁️"],
+45:["Niebla","🌫️"],
+48:["Niebla","🌫️"],
+51:["Llovizna ligera","🌦️"],
+53:["Llovizna moderada","🌦️"],
+55:["Llovizna intensa","🌧️"],
+61:["Lluvia ligera","🌦️"],
+63:["Lluvia moderada","🌧️"],
+65:["Lluvia intensa","🌧️"],
+71:["Nieve ligera","🌨️"],
+73:["Nieve moderada","❄️"],
+75:["Nieve intensa","❄️"],
+80:["Chubascos ligeros","🌦️"],
+81:["Chubascos moderados","🌧️"],
+82:["Chubascos fuertes","⛈️"],
+95:["Tormenta eléctrica","⛈️"],
+96:["Tormenta con granizo","⛈️"],
+99:["Tormenta fuerte con granizo","⛈️"]
+
+};
+
+return condiciones[codigo]||[
+"Condiciones desconocidas",
+"🌡️"
+];
+
+}
+
+
+/* =====================================================
+   CONSULTAR CLIMA
+===================================================== */
+
+const botonClima=
+document.getElementById("consultarClima");
+
+const ciudadSelect=
+document.getElementById("ciudad");
+
+const resultadoClima=
+document.getElementById("resultadoClima");
+
+
+botonClima.addEventListener("click",async function(){
+
+const municipio=
+climaMunicipios[ciudadSelect.value];
+
+if(!municipio){
+
+resultadoClima.innerHTML=`
+<div class="clima-error">
+<strong>⚠️ Municipio no encontrado.</strong>
+</div>
+`;
+
+return;
+
+}
+
+
+resultadoClima.innerHTML=`
+
+<div class="clima-cargando">
+
+<strong>
+🌎 Consultando el clima...
+</strong>
+
+<p>
+Obteniendo información meteorológica de
+${municipio.nombre}.
+</p>
+
+</div>
+
+`;
+
+
+try{
+
+const url=
+`https://api.open-meteo.com/v1/forecast?latitude=${municipio.lat}&longitude=${municipio.lon}&current=temperature_2m,relative_humidity_2m,apparent_temperature,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,weather_code&timezone=America%2FMexico_City`;
+
+
+const respuesta=
+await fetch(url);
+
+
+if(!respuesta.ok){
+
+throw new Error(
+"No se pudo consultar el clima."
+);
+
+}
+
+
+const datos=
+await respuesta.json();
+
+const actual=
+datos.current;
+
+const maxima=
+datos.daily.temperature_2m_max[0];
+
+const minima=
+datos.daily.temperature_2m_min[0];
+
+const clima=
+obtenerDescripcionClima(
+actual.weather_code
+);
+
+
+resultadoClima.innerHTML=`
+
+<div class="clima-card">
+
+<div class="clima-header">
+
+<div>
+
+<span class="clima-municipio">
+${municipio.nombre}
+</span>
+
+<h3>
+${clima[1]}
+${clima[0]}
+</h3>
+
+</div>
+
+<div class="clima-temperatura">
+
+${Math.round(actual.temperature_2m)}°C
+
+</div>
+
+</div>
+
+
+<div class="clima-datos">
+
+<div>
+<span>🌡️</span>
+
+<strong>
+${Math.round(actual.apparent_temperature)}°C
+</strong>
+
+<small>
+Sensación
+</small>
+</div>
+
+
+<div>
+<span>💧</span>
+
+<strong>
+${actual.relative_humidity_2m}%
+</strong>
+
+<small>
+Humedad
+</small>
+</div>
+
+
+<div>
+<span>💨</span>
+
+<strong>
+${Math.round(actual.wind_speed_10m)} km/h
+</strong>
+
+<small>
+Viento
+</small>
+</div>
+
+
+<div>
+<span>🔥</span>
+
+<strong>
+${Math.round(maxima)}°C
+</strong>
+
+<small>
+Máxima
+</small>
+</div>
+
+
+<div>
+<span>🌙</span>
+
+<strong>
+${Math.round(minima)}°C
+</strong>
+
+<small>
+Mínima
+</small>
+</div>
+
+</div>
+
+
+<p class="clima-actualizado">
+
+Información meteorológica actualizada
+para ${municipio.nombre}.
+
+</p>
+
+</div>
+
+`;
+
+}
+
+catch(error){
+
+console.error(error);
+
+resultadoClima.innerHTML=`
+
+<div class="clima-error">
+
+<strong>
+⚠️ No se pudo consultar el clima.
+</strong>
+
+<p>
+Revisa tu conexión a internet
+e inténtalo nuevamente.
+</p>
+
+</div>
+
+`;
+
+}
+
+});
+
+
+/* =====================================================
+   GALERÍA
+===================================================== */
+
+const fotos=[
+
+{
+imagen:"https://tecolotito.elsiglodetorreon.com.mx/i/2018/04/1054059.jpeg",
+texto:"El Cristo de las Noas es una escultura de Jesús de Nazaret ubicada en el Cerro de las Noas, en la ciudad de Torreón, Coahuila, al noreste de México. Es obra de la artista Vladimir Alvarado, quien quiso inmortalizar el gesto de un Cristo protector."
+},
+
+{
+imagen:"https://mexicorutamagica.mx/wp-content/uploads/2020/11/cuatro-cienegas.jpg",
+texto:"Cuatro Ciénegas de Carranza es una ciudad del estado mexicano de Coahuila. Es cabecera del municipio de Cuatro Ciénegas y lugar natal del héroe revolucionario Venustiano Carranza, en honor de quién lleva el nombre"
+},
+
+{
+imagen:"https://viajerosocultos.com/wp-content/uploads/2023/04/comer-en-saltillo.jpg",
+texto:"saltillo es la capital y ciudad más poblada del estado mexicano de Coahuila de Zaragoza, además de ser la cabecera del Municipio de Saltillo. Cuenta con una población de 864 431 habitantes y 1 031 779 habitantes en su zona metropolitana al 2020, lo que la convierte en la decimocuarta ciudad más poblada de México y la decimoquinta zona metropolitana más grande del país"
+},
+
+{
+imagen:"https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Monumento_al_acero%2C_monclova.JPG/330px-Monumento_al_acero%2C_monclova.JPG?utm_source=es.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+texto:"Monclova es una ciudad en la región central del estado de Coahuila, al norte de México. En el año de 2025 hay alrededor de 246,391 habitantes en la ciudad. Es la cabecera del municipio homónimo y de la zona metropolitana de Monclova-Frontera integrada también por los municipios de Frontera, Castaños y San Buenaventura que suman una población de alrededor de 388,105 habitantes.[7] Tiene una densidad de población de 146.1 hab/km² y se encuentra a una altitud de 600 metros sobre el nivel del mar. Fue una ciudad destacada por la mayor producción de acero de todo México y Latinoamérica, lo que le hizo valer el sobrenombre de La Capital del Acero."
+},
+
+{
+imagen:"https://rexnews.mx/wp-content/uploads/2024/10/Portada-Coahuila.jpg",
+texto:"Un viaje por Coahuila"
+}
+
+];
+
+
+let fotoActual=0;
+
+const imagenGaleria=
+document.getElementById("imagenGaleria");
+
+const descripcionGaleria=
+document.getElementById("galeriaDescripcion");
+
+const contadorGaleria=
+document.getElementById("galeriaContador");
+
+
+function actualizarGaleria(){
+
+const foto=fotos[fotoActual];
+
+imagenGaleria.src=foto.imagen;
+
+imagenGaleria.alt=foto.texto;
+
+descripcionGaleria.textContent=foto.texto;
+
+contadorGaleria.textContent=
+`${String(fotoActual+1).padStart(2,"0")} / ${String(fotos.length).padStart(2,"0")}`;
+
+}
+
+
+document
+.getElementById("imagenAnterior")
+.addEventListener("click",function(){
+
+fotoActual--;
+
+if(fotoActual<0){
+fotoActual=fotos.length-1;
+}
+
+actualizarGaleria();
+
+});
+
+
+document
+.getElementById("imagenSiguiente")
+.addEventListener("click",function(){
+
+fotoActual++;
+
+if(fotoActual>=fotos.length){
+fotoActual=0;
+}
+
+actualizarGaleria();
+
+});
+
+
+/* =====================================================
+   INICIALIZAR
+===================================================== */
+
+mostrarMunicipios(municipios);
+
+actualizarGaleria();
+
+</script>
+
+</body>
+</html>
